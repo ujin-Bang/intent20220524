@@ -63,6 +63,8 @@ class MainActivity : AppCompatActivity() {
 
             val myUri = Uri.parse("smsto:${phoneNum}")
             val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
+
+            myIntent.putExtra("sms_body","자동으로입력할 문구에요")
             startActivity(myIntent)
         }
     }
