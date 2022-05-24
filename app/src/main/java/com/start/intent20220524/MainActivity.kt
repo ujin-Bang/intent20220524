@@ -73,6 +73,12 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(Intent.ACTION_VIEW, myUri)
             startActivity(myIntent)
         }
+
+        binding.btnkakaoStore.setOnClickListener {
+            val myUri = Uri.parse("market://details?id=com.kakao.talk")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
