@@ -1,6 +1,7 @@
 package com.start.intent20220524
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -35,6 +36,15 @@ class MainActivity : AppCompatActivity() {
         binding.btnChangeNickname.setOnClickListener {
             val myIntent = Intent(this, EditNicknameActivity::class.java)
             startActivityForResult(myIntent, REQ_CODE_FOR_NICKNAME)
+        }
+
+        binding.btnDial.setOnClickListener {
+//            안드로이드 전화화면으로 이동.
+
+//            제공할 정보 2가지. 1)어떤 화면을로 갈건가?(ACTION) / 2)세부정보(전화걸기 - 어디로 전화거는가?) - Uri
+            val myUri = Uri.parse("tel:01022229999")
+            val myIntent = Intent( Intent.ACTION_DIAL, myUri )
+            startActivity(myIntent)
         }
     }
 
